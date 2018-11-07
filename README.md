@@ -94,7 +94,9 @@ plot(effect(fit2,term="zones.transect",confidence.level = 0.95,partial.residuals
      residuals.color=adjustcolor("blue",alpha.f=0.2),residuals.pch=16,smooth.residuals=FALSE)
 
 #ANOVA analysis
+
 summaryBy(Periwinkles~Tidal.zone, data=periwinkles.random, FUN=c(mean,sd,length))
+
 boxplot(Periwinkles~Tidal.zone, data=periwinkles.random, ylab="Periwinkles count")
 
 fit3=aov(Periwinkles~Tidal.zone, data=periwinkles.random)

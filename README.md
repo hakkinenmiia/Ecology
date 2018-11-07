@@ -45,7 +45,7 @@ plot(transect.counts, zones.transect, xlim = c(0,50), ylim = c(0,5))
 #random
 m1 <- glm(random.counts ~ zones.random)
 shapiro.test(resid(m1))
-#p-value = 0.001231 -> nonparametric
+# p-value = 0.001231 -> nonparametric
 hist(random.counts, xlab = "Count of periwinkles - random")
 
 #transect 
@@ -94,11 +94,18 @@ plot(effect(fit2,term="zones.transect",confidence.level = 0.95,partial.residuals
      residuals.color=adjustcolor("blue",alpha.f=0.2),residuals.pch=16,smooth.residuals=FALSE)
 
 #ANOVA analysis
-
+#random
 summaryBy(Periwinkles~Tidal.zone, data=periwinkles.random, FUN=c(mean,sd,length))
-
 boxplot(Periwinkles~Tidal.zone, data=periwinkles.random, ylab="Periwinkles count")
 
 fit3=aov(Periwinkles~Tidal.zone, data=periwinkles.random)
 summary.lm(fit3) 
 summary(fit3)
+
+#transect
+summaryBy(Periwinkles~Tidal.zone, data=periwinkles.transect, FUN=c(mean,sd,length))
+boxplot(Periwinkles~Tidal.zone, data=periwinkles.transect, ylab="Periwinkles count")
+
+fit4=aov(Periwinkles~Tidal.zone, data=periwinkles.transect)
+summary.lm(fit4) 
+summary(fit4)

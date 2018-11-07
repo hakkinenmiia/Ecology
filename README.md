@@ -96,6 +96,7 @@ plot(effect(fit2,term="zones.transect",confidence.level = 0.95,partial.residuals
 #ANOVA analysis
 #random
 summaryBy(Periwinkles~Tidal.zone, data=periwinkles.random, FUN=c(mean,sd,length))
+
 boxplot(Periwinkles~Tidal.zone, data=periwinkles.random, ylab="Periwinkles count")
 
 fit3=aov(Periwinkles~Tidal.zone, data=periwinkles.random)
@@ -104,6 +105,7 @@ summary(fit3)
 
 #transect
 summaryBy(Periwinkles~Tidal.zone, data=periwinkles.transect, FUN=c(mean,sd,length))
+
 boxplot(Periwinkles~Tidal.zone, data=periwinkles.transect, ylab="Periwinkles count")
 
 fit4=aov(Periwinkles~Tidal.zone, data=periwinkles.transect)

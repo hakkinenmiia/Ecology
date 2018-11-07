@@ -45,7 +45,7 @@ plot(transect.counts, zones.transect, xlim = c(0,50), ylim = c(0,5))
 #random
 m1 <- glm(random.counts ~ zones.random)
 shapiro.test(resid(m1))
-# p-value = 0.001231 -> nonparametric
+#p-value = 0.001231 -> nonparametric
 hist(random.counts, xlab = "Count of periwinkles - random")
 
 #transect 
